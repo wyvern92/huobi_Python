@@ -87,10 +87,14 @@ In your python project, you can follow below steps:
 * Call the interfaces provided by client.
 
 ```python
-request_client = RequestClient()
+
+# import RequestClient first
+from huobi_Python import huobi
+
+request_client = huobi.RequestClient()
 
 # Get the timestamp from Huobi server and print on console
-timestamp = request_client.get_exchange_timestamp
+timestamp = request_client.get_exchange_timestamp() # the original call is an object
 print(timestamp)
 
 # Get the latest btcusdt‘s candlestick data and print the highest price on console
